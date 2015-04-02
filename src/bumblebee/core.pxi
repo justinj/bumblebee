@@ -1,4 +1,3 @@
-; not really a legit test, just eyeball this guy
 (ns bumblebee.core
   (require bumblebee.stat  :as stat)
   (require bumblebee.table :as table)

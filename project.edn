@@ -1,4 +1,3 @@
 {:name sqlite3
  :version "0.1.0-alpha"
- :description "Sqlite3 bindings for Pixie"
- :dependencies [[justinj/sparkles "v0.1.0-alpha"]]}
+ :description "Bare bones benchmarking buddy (for Pixie)"}
