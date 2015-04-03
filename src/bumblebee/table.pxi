@@ -1,6 +1,9 @@
 (ns bumblebee.table
   (require bumblebee.stat :as stat))
 
+(def horizontal  "─")
+(def vertical    "│")
+
 (def left-corner
   {:top    "┌"
    :inner  "├"
