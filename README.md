@@ -11,9 +11,9 @@ Low-effort benchmarking for Pixie:
   (reduce * 1 values))
 
 (bumblebee/display-results
-  (bumblebee/defbench sum-bench
+  (bumblebee/bench sum-bench
     (sum (range 50000)))
-  (bumblebee/defbench product-bench
+  (bumblebee/bench product-bench
     (product (range 50000))))
 
 ; ┌───────────────┬───────┬──────┬─────────┬───────┬─────────┬─────────┐
@@ -29,5 +29,4 @@ Current Problems
 ================
 
 * It should probably run the code a couple times before timing to allow the JIT to get its pants on
-* I think the `defbench`s should just be thunks which whatever displayer you use evaluates
 * Currently it runs the code until 4 seconds has passed, this should probably be configurable

@@ -9,9 +9,9 @@
   (reduce * 1 values))
 
 (bumblebee/display-results
-  (bumblebee/defbench sum-bench
+  (bumblebee/bench sum-bench
     (sum (range 50000)))
-  (bumblebee/defbench product-bench
+  (bumblebee/bench product-bench
     (product (range 50000))))
 
 ; ┌───────────────┬───────┬──────┬─────────┬───────┬─────────┬─────────┐

@@ -20,7 +20,7 @@
                end-time# (time/now)]
            (- end-time# start-time#))))
 
-(defmacro defbench [nm & exprs]
+(defmacro bench [nm & exprs]
   `(let [run-iteration# ~(make-timer exprs)]
      (assoc
        (summarize
