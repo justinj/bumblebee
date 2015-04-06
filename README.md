@@ -10,7 +10,7 @@ Low-effort benchmarking for Pixie:
 (defn product [values]
   (reduce * 1 values))
 
-(bumblebee/display-results
+(bumblebee/run {}
   (bumblebee/bench sum-bench
     (sum (range 50000)))
   (bumblebee/bench product-bench

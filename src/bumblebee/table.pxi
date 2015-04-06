@@ -35,7 +35,7 @@
 (defn- header-entry [header]
   (reduce #(assoc %1 %2 (name %2)) {} header))
 
-(defn- make-row [widths vertical-location]
+(defn- make-divider [widths vertical-location]
   (let [stretches (map #(apply str (repeat % horizontal-bar)) widths)]
     (str (vertical-location left-corner)
          (apply str (interpose (vertical-location inner-corner) stretches))
@@ -61,8 +61,8 @@
         widths (map column-width columns)
         rows (concat [(header-entry header)] rows)]
     (str
-      (make-row widths :top)
+      (make-divider widths :top)
       (apply str \newline
-             (interpose (str (make-row widths :inner) \newline)
+             (interpose (str (make-divider widths :inner) \newline)
                         (map #(row-str % widths header) rows)))
-      (make-row widths :bottom))))
+      (make-divider widths :bottom))))

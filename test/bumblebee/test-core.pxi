@@ -8,10 +8,12 @@
 (defn product [values]
   (reduce * 1 values))
 
-(bumblebee/display-results
-  (bumblebee/bench sum-bench
+(bumblebee/run
+  {:time-per-bench 2
+   :enabled true}
+  (bumblebee/defbench sum-bench
     (sum (range 50000)))
-  (bumblebee/bench product-bench
+  (bumblebee/defbench product-bench
     (product (range 50000))))
 
 ; ┌───────────────┬───────┬──────┬─────────┬───────┬─────────┬─────────┐
