@@ -58,11 +58,10 @@
         The most obvious use of this is to have header be a vector of keywords
         and have rows be a seq of maps from keywords to values."}
   (let [columns (map #(concat [(name %)] (map % rows)) header)
-        widths (map column-width columns)
-        rows (concat [(header-entry header)] rows)]
+        widths (map column-width columns)]
     (str
-      (make-divider widths :top)
-      (apply str \newline
-             (interpose (str (make-divider widths :inner) \newline)
-                        (map #(row-str % widths header) rows)))
+      (make-divider widths :top) \newline
+      (row-str (header-entry header) widths header)
+      (make-divider widths :inner)
+      (apply str \newline (map #(row-str % widths header) rows))
       (make-divider widths :bottom))))
